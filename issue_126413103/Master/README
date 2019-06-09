@@ -1,0 +1,137 @@
+
+if you would only like to use the abuse code, then compile and use Main.java
+
+if you would like to use this abuse setup then follow this steps:
+
+place this directory at the desktop.
+extract wda.zip and automation.zip to the desktop.
+
+(e.g:)
+akayns-MBP:~ akayn$ cd Desktop
+akayns-MBP:Desktop akayn$ ls
+automation    master        wda
+akayns-MBP:Desktop akayn$
+
+
+go to the /automation/dict directory
+
+now change the locations.txt
+and the search.txt
+
+to use for your test website acoording to your campaign
+
+(for every new location create a line like the line at the locations.txt file, e.g with the &tci= &uule)
+see the %20 instead of a white space at the location name.
+and see the white space separating the &tci= and the &uule=
+
+at the search.txt see that the structure is the same as at the file.
+if you'd like the program to search from a location but not to use the location name then add '#' at the start of the line.
+
+see that every location at the search.txt is also included at the locations.txt ..
+
+install ios_webkit_debug_proxy:
+
+brew install ios-webkit-debug-proxy
+
+and see that its functional (e.g run one time:)
+ios_wekbit_debug_proxy -c udid:8888 -d -F
+
+if its not functional then run the following:
+brew update
+brew uninstall --ignore-dependencies libimobiledevice
+brew uninstall --ignore-dependencies usbmuxd
+brew install --HEAD usbmuxd
+brew unlink usbmuxd & brew link usbmuxd
+brew install --HEAD libimobiledevice
+brew link --overwrite libimobiledevice
+brew install ideviceinstaller
+brew link --overwrite ideviceinstaller
+
+install appium:
+brew install node
+brew install ideviceinstaller
+npm install -g appium
+brew install carthage npm install -g ios-deploy npm install -g deviceconsole
+see that appium is functional:
+appium --address <your ip> --port 8080 --webkit-debug-proxy-port 8888
+
+install xcode.
+
+open the /wda directory and locate the .xcodeproj file
+open it with xcode and replace all the 'com.facebook' BundleId (both at the general tab and at the buildphases..)
+with something else.
+register the device you want to run (by using automatically manage signing
+choose a development team and register device)
+see that you do this and set the team and replace the bundle for every subproject
+(webdriveragentrunner, integrationapp etc etc..)
+
+open a terminal and navigate to the /wda folder placed at the desktop.
+run:
+bash Scripts/bootstrap.sh -d
+mkdir -p /Users/XXXXXXX/Desktop/wda/Resources/WebDriverAgent.bundle
+xcodebuild -project WebDriverAgent.xcodeproj -scheme WebDriverAgentRunner -destination 'id=<udid>' test
+
+
+((replace XXXXXX with your username..))
+((replace <udid> with the device udid,
+run:
+instruments -s devices
+to get the udid))
+now only register every other device you would like to run (by changing the target for the build
+at xcode and clicking register device..)
+
+
+for every iphone you'd like to test do:
+
+Iphone setup:
+
+At the iphone:
+Go to settings->
+Developer options:
+Enable uiautomation
+Enable http services
+Disable rate limiting
+
+Go to safari settings:
+‘Open links’->in background
+Block pop-ups
+Allow all cookies
+Let websites track you
+Disable fraudulent website warning
+Let them check for apple pay
+advanced->
+Allow javascript and web inspector
+
+Go to privacy settings:
+Location services->off
+
+Disable screen lock!
+
+-- if you want to use nordvpn for changing the ip then:
+
+Download NordVPN from the app store and sign in with the userid and password, connect to a server (from the same country you'd like to test)
+and make sure that when you open nordvpn application then you can see the ‘disconnect’ button.
+
+
+-- iphone setup end --
+
+
+make sure that all the iphones are unlocked and registered before usage.
+
+and run (with a new terminal, and from this directory):
+python master.py
+
+and follow the on screen instructions..
+if you allow the script, then it would install the program on all devices,
+he would run ios_webkit_debug_proxy, appium and wda for every device.
+and then you can run:
+
+>run [device name] [url for click to call]
+>stop [device]
+
+All click to calls google urls would be saved to /automation/dict/log.txt
+
+etc etc..
+
+
+
