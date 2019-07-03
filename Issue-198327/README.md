@@ -1,1 +1,1 @@
-https://github.com/akayn/Issue-198327
+https://rce.wtf/2019/05/28/Safari.html
