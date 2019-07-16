@@ -1,1 +1,1 @@
-https://rce.wtf/2019/05/28/Safari.html
+https://debug.yoga/2019/05/28/Safari.html
