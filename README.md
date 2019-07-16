@@ -1,7 +1,9 @@
 # PoCs
 Some Public vulnerabilities i found<br><br>
 
+<html><a href="https://debug.yoga/whoami">details..</a></html>
 
+<!--
 - [(ZDI-CAN-8542)](https://www.zerodayinitiative.com/advisories/upcoming/) Apple.
 - [(ZDI-CAN-8489)](https://www.zerodayinitiative.com/advisories/upcoming/) Apple.
 - [(MSRC-52108)](https://rce.wtf/2019/06/10/w2k.html) Race Condition with Win32base.sys might lead to EOP.
@@ -16,3 +18,4 @@ Some Public vulnerabilities i found<br><br>
 - [(CVE-2018-0763)](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2018-0763) Microsoft Edge Information Disclosure Vulnerability.
 - [(CVE-2017-15303)](https://nvd.nist.gov/vuln/detail/CVE-2017-15303) CPUID CPU-Z Kernel Driver OOB write - Local Privilege Escalation.
 - [(CVE-2017-15302)](https://nvd.nist.gov/vuln/detail/CVE-2017-15302) CPUID CPU-Z Kernel Driver arbitrary read - Local Privilege Escalation.
+-->
