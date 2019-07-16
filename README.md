@@ -1,7 +1,7 @@
 # PoCs
 Some Public vulnerabilities i found<br><br>
 
-<html><a href="https://debug.yoga/whoami">details..</a></html>
+<html><a href="https://akayn.github.io/whoami">details..</a></html>
 
 <!--
 - [(ZDI-CAN-8542)](https://www.zerodayinitiative.com/advisories/upcoming/) Apple.
