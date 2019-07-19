@@ -1,4 +1,4 @@
-# MSRC-52108 A Case of a Win32k Race Condition
+# MSRC-52108 A Case of a Win32k Race Condition 
 
 While fuzzing Microsoft Edge i have stumbled upon a kernel BSOD. the buggy code was present in the following function: ***win32kbase!RGNMEMOBJ::vPushThreadGuardedObject***, judging from the ida xrefs to this function, we can see a window of opportunity for concurrent calls to this function:<br>
 
